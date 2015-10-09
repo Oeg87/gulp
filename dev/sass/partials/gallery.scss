@@ -1,0 +1,100 @@
+//GALLERY
+//////////////////////////////////////////////////////////////////////////////
+
+.gallery {
+
+    .title--color,
+    .description {
+        //border-bottom:1px dotted transparent;
+        @include transition;
+    }
+}
+
+.gallery--list {
+    .gallery__link {
+        display:block;
+        border-bottom:0;
+    }
+    .gallery__img__content {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    .gallery__img {
+        position: absolute;
+        bottom:0;
+        left:0;
+    }
+
+    .list__item {
+        margin-bottom: $space-bottom;
+        &:nth-child(9) {
+            clear:left;
+        }
+    }
+    .title--color {
+        font-weight: normal;
+    }
+    .category {
+        display:block;
+        font-style:normal;
+        color: $c-7-text;
+    }
+
+
+    //MOBILE
+    @include breakpoint(sm-max) {
+        .col--1 {
+            float: left;
+            width: 33.333%;
+            padding-left: $gutter/2;
+            padding-right: $gutter/2;
+        }
+    }
+}
+
+
+
+
+.gallery__link {
+    text-decoration: none;
+    .gallery__img {
+        border:1px solid transparent;
+        @include transition;
+    }
+}
+
+
+
+.gallery--col {
+    .col--3:nth-child(3n+1){
+        clear:left;
+        //padding-left:0;
+    }
+    .figure__caption {
+        margin-bottom: $gutter;
+        &:after {
+            content:"»"
+        }
+    }
+}
+
+// try to put hover box on pictures
+// .gallery--col{
+//     .figure{
+//         picture {
+//             position: relative;
+//             display:block;
+//             &:before {
+//                 position: absolute;
+//                 top:0;
+//                 left:0;
+//                 content:"";
+//                 display:block;
+//                 width:100%;
+//                 height:100%;
+//                 z-index:5;
+//             }
+//         }
+//     }
+// }

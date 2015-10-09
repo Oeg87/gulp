@@ -1,0 +1,120 @@
+//BOX
+//////////////////////////////////////////////////////////////////////////////
+.box__title {
+    font-family: $font-title;
+    font-weight: bold;
+}
+
+.article__header {
+    .box__title,
+    .box__intro {
+        @extend %font-large;
+    }
+}
+
+.box__header {
+    &[class*="col--"] {
+        margin-left: $gutter/2;
+        margin-right: $gutter/2;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.box__content {
+    p {
+        padding-bottom: $space-bottom;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.box__aside {
+    margin-bottom: $space-bottom;
+    .figure + .figure {
+        margin-top: $space-bottom;
+    }
+    .figure__caption {
+        @extend %caption-color;
+    }
+    @include breakpoint(ml-min) {
+        margin-bottom: 0;
+    }
+}
+
+.box {
+    padding: $gutter ($gutter/2);
+    border: 1px solid black;
+}
+
+.box--no-border {
+    border: none;
+    padding: 0 ($gutter/2);
+    [class*="col--"]:last-child {
+        .gallery--col & {
+            padding-right: $gutter/2;
+        }
+    }
+}
+
+.box--rounded {
+    @include border-radius($border-radius-base);
+}
+
+// remove space caused by grid if deisgn without box--border
+// .box {
+//  [class*="col--"]:first-child {
+//         padding-left: 0;
+//     }
+//     [class*="col--"]:last-child {
+//         padding-right: 0;
+//     }
+// }
+// Start of Column 2/3 && 1/3 
+.box__content,
+.box__aside,
+.box__col--2 {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+}
+
+.box__col__content--2 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@include breakpoint(sm-min) {
+    .box__content {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .box__col--2 {
+        clear: left;
+        float: left;
+        width: 100%;
+        overflow: hidden;
+    }
+    .box__col--1 {
+        float: left;
+        width: 100%;
+        position: relative;
+        right: 33.333%;
+    }
+    .box__col__content--1 {
+        float: left;
+        position: relative;
+        left: 33.333%;
+        width: 66.666%;
+        padding-right: $gutter;
+        overflow: hidden;
+    }
+    .box__col__content--2 {
+        float: left;
+        position: relative;
+        width: 33.333%;
+        left: 33.333%;
+        overflow: hidden;
+        padding-left: $gutter;
+    }
+}

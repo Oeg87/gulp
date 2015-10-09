@@ -1,0 +1,64 @@
+//GRID P&M
+////////////////////////////////////////////////////////////////////////////////////////////
+.container {
+    width: 98%;
+    max-width: 1200px;
+    @include center-block;
+    @include clearfix;
+}
+
+/// ROW
+//////////////////////////////////////////////
+.row {
+    position: relative;
+    width: 100%;
+    margin-bottom: $space-bottom;
+    @include clearfix;
+}
+
+
+
+/// COL
+//////////////////////////////////////////////
+@include breakpoint(sm-min) {
+    [class*="col--"] {
+        float: left;
+    }
+    .row--reverse {
+        [class*="col--"] {
+            float: right;
+        }
+    }
+}
+
+
+@mixin calc-grid-col($columns) {
+    @for $i from 0 through $columns {
+        //BREAKPOINT ML MIN
+   
+        @include breakpoint(sm-min) {
+            .col--#{$i} {
+                width: percentage( $i / $columns);
+                padding-right: ($gutter/2);
+                padding-left: ($gutter/2);
+            }
+            .col--#{$i}-offset {
+                margin-left: percentage(($i / $grid-columns));
+                @include breakpoint(sm-max) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+//calculate grid
+@for $i from 7 through 9 {
+    .row--#{$i} {
+        @include calc-grid-col($i);
+    }
+}
+
+
+
+

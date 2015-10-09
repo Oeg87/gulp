@@ -1,0 +1,153 @@
+//Navigation
+//////////////////////////////////////////////////////////////////////////////
+.header {
+    padding: $space-bottom 0 0 0 ;
+    //margin: 0 0 $space-bottom 0 ;
+    font-weight: bold;
+    font-family: $font-title;
+
+
+
+
+
+    background-color: $bg-header;
+    @extend %shadow-bottom;
+    @include transition;
+    @include clearfix;
+
+    [class*="col--"]:first-child {
+        padding-left: 0;
+    }
+    [class*="col--"]:last-child {
+        padding-right: 0;
+    }
+    .box {
+        display: block;
+        padding: $gutter;
+        background-color: $bg-header;
+    }
+    .menu__link {
+        display: block;
+        border-bottom-style: solid;
+        &:hover,
+        &:active {
+            border-bottom-style: solid;
+        }
+    }
+
+
+    @media (min-width: 765px) {
+        font-size:12px;
+        font-size:1.2vw;
+    }
+    @media (max-width: 992px) {
+        font-size:12px;
+    }
+
+
+}
+.header--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+}
+.header--top,
+.header--bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    @include transition;
+    margin-bottom:0;
+}
+
+.header--top {
+    top: 0;
+}
+.header--top--negative {
+    margin-top: -51 - $space-bottom;
+    //51 height of nav
+}
+
+.header--bottom {
+    bottom: 0;
+}
+
+.menu {
+    @include transition;
+}
+
+.header .container,
+.nav {
+    position: relative;
+}
+
+.nav__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nav--collapsed {
+    display: none;
+
+}
+
+///BTN
+///////////////////////////////////////////////
+.nav__btn {
+    display: block;
+    width: 43px;
+    height: 43px;
+    border: 1px solid $c-1-border;
+    padding-top: 4px;
+    background: transparent;
+    outline: none;
+    @include border-radius(9px);
+    @include transition;
+}
+
+.nav__btn__line {
+    display: block;
+    height: 3px;
+    margin-bottom: 2px;
+    @include transition;
+    @include border-radius(1px);
+}
+
+///BREAKPOINT
+///////////////////////////////////////////////
+@include breakpoint(sm-max) {
+    .logo {
+        display: inline-block;
+    }
+    .nav {
+        margin-top: $space-bottom;
+        clear: left;
+    }
+    .menu {
+        
+        width: 100%;
+        .col--1 {
+            float: none;
+            width: 100%;
+            padding: 0;
+            margin: $space-bottom 0;
+        }
+    }
+}
+
+@include breakpoint(sm-min) {
+    .nav__btn {
+        display:none;
+    }
+    .nav--collapsed {
+        display: block!important;
+    }
+    .row--8 .logo {
+        padding-right:$gutter;
+    }
+}

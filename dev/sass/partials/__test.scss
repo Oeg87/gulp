@@ -1,0 +1,24 @@
+
+
+/////TEST
+.test__body {
+	background: #999;
+}
+.test__container {
+	width:90%;
+	background: white;
+	padding:1em;
+	@include center-block();
+}
+.test__title{
+	font-family: $font-title;
+    margin-bottom: $gutter;
+    margin-top: $gutter*2;
+}
+
+.text {
+    font-size: $font-size-base;
+}
+.small {
+    font-size: $font-size-small;
+}

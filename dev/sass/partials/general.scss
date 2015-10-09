@@ -1,0 +1,64 @@
+//GENERL
+//////////////////////////////////////////////////////////////////////////////
+.columns--3 {
+    @include column-count(1);
+    @include breakpoint(sm-min) {
+        @include column-count(2);
+    }
+    @include breakpoint(ml-min) {
+        @include column-count(3);
+    }
+}
+
+.main-content {
+    margin-top: 52+$space-bottom;
+}
+
+.header--top {
+    &+ .content {
+        margin-top: 52+$space-bottom;
+    }
+}
+
+//CONTENT
+//=========================================
+.content {
+   // margin-top: $space-bottom;
+}
+
+//LINKS
+//=========================================
+.link {
+    display: inline-block;
+}
+
+.article__content {
+    a {
+        border-bottom: 1px $s-dotted;
+    }
+    a:active,
+    a:hover {
+        border-bottom: 1px $s-dotted;
+    }
+}
+
+.dl {
+    a:active,
+    a:hover {
+        border-bottom: 1px $s-dotted;
+    }
+}
+
+[class*="link--"] {
+    & {
+        border-bottom: 1px $s-dotted;
+    }
+    &:active,
+    &:hover {
+        border-bottom: 1px $s-dotted;
+    }
+}
+
+.title--color {
+    @include transition;
+}

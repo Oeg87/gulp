@@ -1,0 +1,20 @@
+//TYPO
+//////////////////////////////////////////////////////////////////////////////
+.font--small {
+    @extend %font-small;
+}
+
+.font--base {
+    @extend %font-base;
+}
+
+.font--large {
+    @extend %font-large;
+}
+
+
+
+.header {
+    @extend %font-small;
+
+}
