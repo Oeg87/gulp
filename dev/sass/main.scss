@@ -1,15 +1,9 @@
 @charset 'utf-8';
-@import "modules/_variables",
-		"modules/_mixins",
-		"modules/_grid",
-		"vendor/normalize";
 
         /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 html {
-    font-family: $font-text;
-    color: $c-text;
-    @extend %font-base;
+  
 }
 
 
@@ -58,9 +52,7 @@ textarea {
     padding: 0.2em 0;
 }
 
-*, *:after, *:before {
-	@include bs;
-}
+
 .invisible {
     visibility: hidden;
 }
@@ -82,33 +74,6 @@ textarea {
 //==========================================================================
 //	Author's custom styles
 //==========================================================================
-
-@import "modules/_typo";
-
-
-@import "partials/general";
-@import "partials/grid-pm";
-@import "partials/nav";
-@import	"partials/typo";
-@import "partials/box";
-@import "partials/list";
-@import "partials/border";
-@import "partials/color";
-@import "partials/img";
-@import "partials/gallery";
-@import "partials/slideshow";
-@import "partials/jumbotron";
-@import "partials/video";
-@import "partials/footer";
-@import "partials/__test";
-
-
-@import "partials/mediaqueries.scss";
-@import "partials/helper-classes";
-@import "partials/print.scss";
-
-
-@import "vendor/magnific-popup/magnific-popup";
 
 
 .test--center {
