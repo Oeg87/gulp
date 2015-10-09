@@ -53,7 +53,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('sass', function() {
-    return sass(src + 'sass/main.scss', {
+    return sass(src + 'sass/**/*.scss', {
             style: 'default'
         })
         .pipe(gulp.dest(dest + 'css'))
@@ -95,11 +95,12 @@ gulp.task('minify', function() {
 });
 
 gulp.task('watch', function() {
-    livereload.listen();
+    
     gulp.watch([src + 'js/*.js'], ['lint', 'scripts']);
     gulp.watch([src + 'sass/*.scss'], ['sass']);
     gulp.watch([src + 'img/**/*'], ['images']);
     gulp.watch([src + 'html/*'], ['html']);
+    livereload.listen();
 });
 
 

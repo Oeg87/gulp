@@ -2581,5 +2581,7 @@ img.mfp-img {
   right: 0;
   padding-top: 0; }
 
-.test__center {
-  background: red !important; }
+.test--center {
+  background: red !important;
+  border: 1px solid blue;
+  opacity: 0.9; }

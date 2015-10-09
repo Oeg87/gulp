@@ -111,8 +111,10 @@ textarea {
 @import "vendor/magnific-popup/magnific-popup";
 
 
-.test__center {
+.test--center {
     background:red!important;
+    border:1px solid blue;
+    opacity:0.9;
 }
 
 
