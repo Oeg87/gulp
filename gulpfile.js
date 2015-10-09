@@ -49,26 +49,22 @@ gulp.task('lint', function() {
 
 gulp.task('html', function() {
     gulp.src(src + '*.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
         .pipe(connect.reload());
 });
 
 gulp.task('sass', function() {
-    return sass(src + 'sass/**/*.scss', {
-            style: 'default',
+    return gulp.sass(src + 'sass/**/*.scss', {
+            style: 'compress',
             sourcemap: true
         })
-        .on('error', sass.logError)
-        .pipe(gulp.dest(dest + 'css'))
-        .pipe(connect.reload());
-});
-
-gulp.task('autoprefixer', function() {
-    return gulp.src(dest + 'app.css')
         .pipe(autoprefixer({
             browsers: ['last 3 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest(dest + 'css/'))
+        .pipe(gulp.dest(dest + 'css'))
         .pipe(connect.reload());
 });
 
@@ -87,14 +83,7 @@ gulp.task('images', function() {
 
 
 
-gulp.task('minify', function() {
-    return gulp.src(src + '*.html')
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest(dest))
-        .pipe(connect.reload());
-});
+
 
 gulp.task('watch', function() {
 
@@ -112,4 +101,4 @@ gulp.task('clear', function(done) {
 });
 
 // Default Task
-gulp.task('default', ['connect', 'scripts', 'sass', 'autoprefixer', 'images', 'lint', 'html', 'minify', 'watch']);
+gulp.task('default', ['connect', 'scripts', 'sass', 'images', 'lint', 'html', 'watch']);
