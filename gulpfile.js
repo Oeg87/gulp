@@ -22,7 +22,7 @@ var gulp = require('gulp'),
 //Server
 gulp.task('connect', function() {
     connect.server({
-        root: 'dev',
+        root: 'build',
         livereload: true
     });
 });
@@ -56,7 +56,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('sass', function() {
-    return gulp.sass(src + 'sass/**/*.scss', {
+    return sass(src + 'sass/main.scss', {
             style: 'compress',
             sourcemap: true
         })
